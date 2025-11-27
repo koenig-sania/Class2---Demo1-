@@ -3,7 +3,7 @@ name : First Workflow
 # Trigger
 on : 
   push :
-  workflow_dispatch:
+  workflow_dispatch: # manual
 
 jobs:
    # First Job
@@ -14,6 +14,9 @@ jobs:
      steps:
        - name : Hello World
          run : echo "Hello World"
+       - name : Event Name
+         run : echo "Event Name :${{github.event}}" # Context Reference
+          
 
 
   # Second Job
